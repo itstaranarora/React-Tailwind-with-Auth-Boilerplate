@@ -1,4 +1,4 @@
-# Tailwind React with Auth Boilerplate
+# React + Tailwind (with Auth) Boilerplate
 
 Kick start your React + Tailwind project by forking this repository.
 
