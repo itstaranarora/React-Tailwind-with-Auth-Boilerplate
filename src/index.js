@@ -1,14 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import { SWRConfig } from "swr";
+import "./index.css";
+import App from "./App";
+import { AuthProvider } from "context/AuthContext";
+import reportWebVitals from "./reportWebVitals";
+import { fetcher } from "services/api";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SWRConfig
+      value={{
+        fetcher,
+      }}
+    >
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </SWRConfig>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
